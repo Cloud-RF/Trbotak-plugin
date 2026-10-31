@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Blank starting point for the TrboTAK dropdown.  Add your content inside the
+    root LinearLayout below.
+
+    Note: this renders as an empty panel until you add widgets to it.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/trbotak_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!--
+        baselineAligned must stay false: the ImageButton has no baseline at all,
+        so it would align differently against the "+" and title. Uniform 56dp
+        heights plus center_vertical is what keeps everything level.
+    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/trbotak_title"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:gravity="start|center_vertical"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@string/app_name" />
+
+        <Button
+            android:id="@+id/simulate_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/simulate"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/settings_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="8dp"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_cog"
+            android:contentDescription="@string/settings" />
+
+        <Button
+            android:id="@+id/add_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="0dp"
+            android:textSize="30sp"
+            android:text="@string/complete_add" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/user_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/trbotak_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:textSize="11sp"
+        android:textColor="@android:color/darker_gray"
+        android:text="@string/trbotak_version" />
+</LinearLayout>

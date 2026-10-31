@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Applied to the plugin context in TrboTakMapComponent.onCreate. -->
+    <style name="ATAKPluginTheme" parent="@android:style/Theme.Holo">
+        <item name="android:buttonStyle">@android:style/Widget.Button</item>
+        <item name="android:imageButtonStyle">@android:style/Widget.Button</item>
+        <item name="android:buttonStyleToggle">@android:style/Widget.Button</item>
+        <item name="android:spinnerStyle">@style/ATAKSpinner</item>
+        <item name="android:spinnerItemStyle">@style/ATAKSpinnerItem</item>
+        <item name="android:editTextStyle">@style/ATAKEditText</item>
+    </style>
+
+    <!-- Referenced by AndroidManifest.xml. -->
+    <style name="AppTheme" parent="@android:style/Theme.Holo">
+        <item name="android:buttonStyle">@android:style/Widget.Button</item>
+        <item name="android:imageButtonStyle">@android:style/Widget.Button</item>
+        <item name="android:buttonStyleToggle">@android:style/Widget.Button</item>
+        <item name="android:spinnerStyle">@style/ATAKSpinner</item>
+        <item name="android:spinnerItemStyle">@style/ATAKSpinnerItem</item>
+        <item name="android:editTextStyle">@style/ATAKEditText</item>
+    </style>
+
+    <style name="ATAKSpinner" parent="@android:style/Widget.Spinner">
+        <!-- dropdown-mode spinners crash inside an ATAK dropdown -->
+        <item name="android:spinnerMode">dialog</item>
+    </style>
+
+    <!-- Spinner text can otherwise render white on white. -->
+    <style name="ATAKSpinnerItem" parent="@style/AppTheme">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="ATAKEditText" parent="@android:style/Widget.EditText">
+        <!-- keep the keyboard out of fullscreen mode over the map -->
+        <item name="android:imeOptions">flagNoFullscreen</item>
+    </style>
+
+</resources>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- NIC -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:text="@string/settings_nic"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/settings_nic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/nic_options"
+            android:popupBackground="@color/darker_gray"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+    <!-- Refresh -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:text="@string/settings_refresh"
+            android:textStyle="bold" />
+
+        <!--
+            android:min requires API 26 and minSdk here is 21, so the bar runs 0..15 and
+            the code offsets by MIN_REFRESH_SECONDS.
+        -->
+        <SeekBar
+            android:id="@+id/settings_refresh_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="15" />
+
+        <TextView
+            android:id="@+id/settings_refresh_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/text_grey" />
+    </LinearLayout>
+
+    <!-- CoT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:text="@string/settings_cot"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/settings_cot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:hint="@string/settings_cot_hint"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColorHint="@color/text_grey" />
+
+        <Button
+            android:id="@+id/settings_cot_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:minWidth="0dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:text="@string/settings_help_button"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!--
+        Says what the address above will actually do, resolved against the link the
+        NIC setting selects. Updated as the field is typed in and as the NIC changes.
+    -->
+    <TextView
+        android:id="@+id/settings_cot_preview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/text_grey"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/settings_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/settings_footer"
+        android:textColor="@color/text_grey"
+        android:textSize="12sp" />
+
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">TrboTAK</string>
+    <string name="app_desc">Send and receive UDP packets from within ATAK</string>
+
+    <!-- Settings dialog -->
+    <string name="settings">Settings</string>
+    <string name="settings_title">TrboTAK Settings</string>
+    <string name="settings_nic">NIC</string>
+    <string name="settings_refresh">Refresh</string>
+    <string name="settings_cot">CoT Broadcast address</string>
+    <string name="settings_cot_hint">255.255.255.255</string>
+    <string name="settings_cot_invalid">Not a valid CoT address. Use host or host:port, e.g. 255.255.255.255 or 239.2.3.1:6969.</string>
+    <string name="settings_seconds_format">%1$d seconds</string>
+    <string name="settings_help_button">?</string>
+    <string name="settings_footer">TrboTAK by CloudRF.com</string>
+    
+    <string name="settings_cot_preview_local">This device only - nothing sent to the network</string>
+    <string name="settings_cot_preview_broadcast">Broadcast to %1$s:%2$d - every ATAK on this link</string>
+    <string name="settings_cot_preview_broadcast_unknown">Broadcast on port %1$d - link is down, subnet unknown</string>
+    <string name="settings_cot_preview_multicast">Multicast %1$s:%2$d - every ATAK joined to this group</string>
+    <string name="settings_cot_preview_unicast">Unicast to %1$s:%2$d - that host only</string>
+    <string name="settings_cot_preview_off_subnet">%1$s is not on this link (%2$s) - it will not arrive</string>
+    <string name="settings_cot_preview_invalid">Not a valid address</string>
+
+    <string name="settings_cot_help_title">CoT broadcast address</string>
+    <string name="settings_cot_help">BLANK\nThis device only. Nothing is sent.\n\n255.255.255.255  (default)\nEveryone on current network. Sent to the local broadcast address for whichever link is selected above.\n\n239.2.3.1:6969\nThe ATAK multicast group.\n\n192.168.1.50:4242\nOne specific device or TAK server.\n\nPORT\nDefaults to 4242. The receiving ATAK must have a UDP input on the port you choose, the mesh group needs 6969.</string>
+    <string name="settings_wifi_radio_ids">%1$d radio(s) are enrolled by UID, which only works over a tethered link. Re-add them by their wifi IP address.</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="id">ID</string>
+    <string name="name">Name</string>
+    <string name="complete_add">+</string>
+    <string name="simulate">Simulate</string>
+
+    <!-- radio rows -->
+    <string name="remove">Remove</string>
+    <string name="remove_radio_title">Remove radio</string>
+    <string name="remove_radio_message">Stop polling %1$s (%2$s) and remove it from the list? Its marker will be removed from the map.</string>
+    <string name="no_position_yet">No position for %1$s yet</string>
+    <string name="row_fix_age">seen %1$ds ago</string>
+    <string name="row_no_reply">no reply</string>
+
+    <!-- Must stay in sync with the NIC_* constants in TrboTakPreferences -->
+    <string-array name="nic_options">
+        <item>Bluetooth</item>
+        <item>Wi-Fi</item>
+        <item>USB</item>
+    </string-array>
+</resources>
